@@ -28,6 +28,7 @@ DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = []
 
+# APPEND_SLASH = False
 
 # Application definition
 
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django101',
-    'cities',
+    'django101.cities',
+    'django101.people',
 ]
 
 MIDDLEWARE = [
