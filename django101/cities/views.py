@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django101.cities.models import Person
 
 
@@ -8,6 +8,21 @@ def index(req):
         'people': Person.objects.all(),
     }
     return render(req, 'index.html', context)
+
+
+def create_person(req):
+    Person(
+        name='Pesho',
+        age=18,
+        home_town='Pernik'
+    ).save()
+    return redirect('/cities')
+
+def test_index(req):
+    return HttpResponse(
+        '{"name": "Myname"}',
+        content_type='text',
+    )
 
 
 def list_phones(req):
