@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django101.cities.models import Person
 
 
+
 def index(req):
     context = {
         'name': 'MyName',
